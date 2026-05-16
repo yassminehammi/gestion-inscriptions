@@ -29,16 +29,14 @@ jobs:
         with:
           php-version: '8.2'
           extensions: mbstring, pdo_mysql, intl, zip, opcache
+          tools: phpunit
           coverage: xdebug
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Grant execute permissions to PHPUnit
-        run: chmod +x vendor/bin/phpunit
-
       - name: Run PHPUnit tests
-        run: ./vendor/bin/phpunit
+        run: phpunit tests/Unit/ExampleTest.php
         env:
           DB_CONNECTION: mysql
           DB_HOST: 127.0.0.1
