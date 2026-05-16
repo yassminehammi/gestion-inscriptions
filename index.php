@@ -1,1 +1,1 @@
-<?php echo "Hello World"; ?> 
+<?php echo "Mon pipeline CI/CD fonctionne parfaitement !"; ?>
